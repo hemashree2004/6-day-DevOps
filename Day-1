@@ -1,0 +1,104 @@
+OS- Interface between User and Hardware.
+Cloud Computing- On demand delivery of IT resources over the internet; You can access technical resources such as storage, databases, compute, networking, security with pay as you go.
+Cloud Providers in market- AWS, Microsoft Azure, Google Cloud Platform(GCP). 
+ec-elastic compute cloud
+
+DevOps(Development and Operation)- SDLC(Software Development Life Cycle): It is a structured step by step process that development teams used to create high quality, cost effective and secure software.
+*Set of practical and  principles and cultural philosophies that aim to bridge the gap between software development and operations.
+Goal:   Shorten the software development life cycle,
+	improve collaboration between development and operations team
+	deliver high quality software faster and more efficiently.
+Key points of DevOps:
+1st: Automation
+2nd: Continuous integration
+3rd: Continuous Delivery/Deployment
+4th: Contribution/Collaboration
+5th: Monitoring
+
+Why DevOps Matters?
+It's a software development and operations approach that enables faster development of new products and easier ,maintenance of existing deployments.
+Benefits:
+Speed, Rapid Delivery, Reliability, Improved Collaboration, Scale, Security.
+How it Works?
+Continuous Integration:
+
+
+**************************************Waterfall:*****************************************
+Distinct goal for each phase of development.
+Requirements->Analysis->Design->Coding->Testing->Operations
+Limitations:    
+	High amounts of risk and uncertainty
+	Once app is in testing stage, it is very difficult to go back and change something that was well thought out in the concept stage
+	Not a good model for complex and Object Oriented projects
+	No working project is produced until the last procedure	
+
+***********************************Agile Methodology****************************************8*
+DevOps is culture, fostering collaboration amongst all participants involved in the development and maintenance of software. 
+Agile can be described as a development methodology designed to maintain productivity and drive release with the common reality of changing needs.	
+Limitations:
+	Developer: Code works in this laptop
+	Operator: Some problem with the code, Doesn't work in production.
+
+Server Components: -OS(Linux, Win, Mac), 
+		   -RAM(16GB etc.), 
+		   -ROM(HDD,SSD), 
+		   -Networking.
+
+Commands:
+
+1. ls- is a command to list files and directories, means folders.
+2. touch- is a command to create empty files. eg: touch manya
+3. "cat > manya "- opens the file, ctrl C to go back from the file
+4. cat manya- to display the content in the file manya.
+5. rm - remove the file. eg: rm manya
+6. mkdir- make directory
+7. cd- change directory. eg: cd Dname(switch to directory)
+			     cd .. - exit from the directory
+8. To delete directory:
+	With file: rm -r eg: rm -r directoryName
+	Without file: rmdir (empty directory) eg: rmdir directoryName
+9. ls -l: list of files and the directories with permissions.
+10. pwd - print working directory/present
+11. history- to check the history overall
+12. cd ../.. : to exit from the directory directly to home
+
+ 			***-------------------------------------------------------------------------------------------------------***
+
+What is a server:
+It is a powerful computer or a system that provides services or data to other computers now as clients.
+Clients: Come over a internet.
+Servers are designed to manage, store and process data and they play a critical role in handling request delivering responses within a network.
+
+Types of Servers:
+WebServer: Delivers web pages to user's browsers. eg: ngnx
+FileServer: Stores and manages files that clients can access and share over a network.
+DatabaseServer: Manage database and provide access to clients for reading, writing and updating data. eg: MySQL, MongoDB
+MailServer: Handles the sending, receiving and storage of emails. eg: Microsoft exchange.
+
+Server Components:
+OS, RAM, CPU, Storage, Network Interface Call
+
+EC2 Configurations:
+1. Name of the Server
+2. Application and OS images(Amazon Machine Image) 
+	-os selection
+3. Instance type: choose number of CPU's and RAM
+4. Keypair: used to connect securely to instance
+5. Networking:
+	-firewalls
+	-VPC: virtual Private Cloud
+	-subnets
+	-route labels
+	-NAT
+	-Internet gateway
+	-Elastic IPS
+6. Configure storage:
+	-EBS(Elastic block store)
+	-EBS nothing but similar to hard disk
+	-Persistent block level storage
+	-can create new volumes and attach to running
+7. Launch instance:
+	webserver/windows server
+
+
+
