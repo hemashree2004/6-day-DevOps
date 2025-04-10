@@ -1,0 +1,73 @@
+File Types:
+-Directory: starts with d
+-Regular file: starts with - 
+
+-rw-r--r-- : 
+Explanation:
+-:Regular file
+rw-: permission to owner(read ,write, no permission); 4+2+0:6;
+r--: permission to group(read, no, no); 4+0+0:4;
+r--: permission to others(read, no, no); 4+0+0:4;
+
+ls -l: To view the details in the file or directory
+
+***************************Linux File Permissions************************
+
+-User: Owner of the file
+-Group: Collection of user with same file permissions
+-Others: Not an owner and not in groups
+
+Read: r, Write: w, Execute: x
+
+Values:
+Read: 4
+Write: 2
+Execute: 1
+Total: 7 numeric values
+
+***********************************Jenkins*****************************
+* Open source automation told for CI and CD
+*Automate server used for continuous integration(CI) and Continuous delivery(CD) for clients.
+*Automating tasks like building, testing and deploying software, leading to faster delivery software lifecycle.
+*Jenkins is developed using Java
+*CI: 
+
+Jenkins Installation:
+
+-EC2->Create Instance->Name->Ubuntu->Proceed without->Select HTTP and HTTPS->Network edit->Add security group role->type->all traffic->everywhere->create
+-Create instance->connect
+
+************************************************************************************
+Commands:
+
+$ sudo apt-get update
+
+$ sudo apt-get install default-jre
+sudo apt install fontconfig openjdk-17-jre
+
+4) Install Jenkins in Ubuntu VM with below commands
+
+$ curl -fsSL https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key | sudo tee \
+  /usr/share/keyrings/jenkins-keyring.asc > /dev/null
+
+$ echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \
+  https://pkg.jenkins.io/debian-stable binary/ | sudo tee \
+  /etc/apt/sources.list.d/jenkins.list > /dev/null
+
+sudo apt-get update
+sudo apt-get install jenkins
+sudo systemctl status Jenkins(not given)
+
+*****************************************************************************************
+
+*After sudo commands, in down you will get 2 IP addresses: Public and Private
+*Copy public
+*Open new tab
+*Copy public IP and :8080
+*Enter and it displays the website.
+*in terminal of instance, give sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+*Password you will get, copy and paste in website, continue, click install package(first option)
+*Save, Save and Continue
+*Start using Jenkins
+
+
