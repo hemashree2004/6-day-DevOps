@@ -1,0 +1,85 @@
+Components of Autoscaling:
+
+Launch Template:
+Enter name
+Select AWS Linux
+Select t2.micro instead of Nano
+Select some provide guide option
+Create template
+
+Autoscaling group:
+Create 
+Naming-asg
+Choose template
+Next
+Let all rest be as it is, like let the option be no load balancer
+Select all availability zones
+Next
+Put 60 seconds
+Next
+(Desired capacity 4
+Min 1, Max 6) Here 1,1,2 we gave
+Next , next, next, create group
+
+Add security:
+Up near account , select add security credentials
+There select assign MFA
+you'll get QRcode
+scan from authenticator app
+you will get OTP there, enter MFA 1 and 2 in app you will see
+Log out
+enter MFA again when u open the app
+you logged in with multi factor authentication now
+now again go to sec cred, remove MFA
+
+*************************Storage Options in AWS:***********************
+
+1. Object storage: S3(Simple Storage Service)
+- Scalable and Durable
+- Pay-as-you-go
+- used to upload files/images/movies/pdf files/csv file/folders etc
+- is called bucket
+- bucket size is 5TB, can create each account 100 buckets
+- bucket can keep public also private
+Creating S3 Bucket(naming rules):
+- Global unique
+- Minimum 3 Char and Maximum 63 char
+- No special char/no caps/no spaces
+* Search S3 and open
+* Create bucket
+* Name
+* create 
+* Create folder, upload
+* You can change access, let it be block all
+* You can change the access later
+
+ARN Amazon Resource name:arn:aws:s3:::hemashree000
+
+2. Block Storage: EBS(Elastic Block Storage)
+3. File Storage: EFS(Elastic File Storage)
+
+CLI:Command Line Interface
+Used to add buckets, check images to see the commands to create and delete
+
+****************************Terraform:***********************************8
+Within less time multiple things can be created
+
+provider "aws" {
+  region = "ap-south-1" 
+}
+
+resource "aws_s3_bucket" "my_bucket" {
+  bucket = "hemashree000"
+  acl    = "private"
+}
+
+in git bash, 
+through terraform we are adding the buskcets
+
+Refer the file terraform.txt
+
+************************Docker*****************************
+
+Docker used to break monolithic something
+
+Create instance, you have to connect
