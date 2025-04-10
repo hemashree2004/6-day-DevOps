@@ -1,0 +1,59 @@
+Three Tier Architecture of a website
+Client
+Web Browser
+Web server(ngnx)
+App Server(Tomcat)
+MySQL
+
+What is Horizontal and vertical scaling?
+Vertical: increase the number of CPU s
+Horizontal: automatically increase the number of servers
+
+1. Load Balancer- To distribute the incoming application traffic to registered targets called servers
+2. Autoscaling- Automatically add or remove servers based on traffic and defined policy
+3. Cloud watch alarm- It will trigger the alarm when there is a problem in servers, whenever crossed the CPU utilization threshold
+4. SNS- Simple Notification Service- Sends notification to the registered emails, sends notification
+
+Create Topic in AWS:
+1. Search in the bar SNS
+2. Select SNS
+3. Create topic
+4. Select standard not fifo
+5. Done
+6. Add subscriptions
+7. Select email or phone
+8. Enter subscription
+9. Confirm mail and then delete in topic and subscriptions
+
+Create Instance
+1. Near AWS logo, 9 dots logo
+2. Then select compute
+3. Select EC2 
+4. Launch instances
+5. Enter everything
+6. Create instances
+
+**************************************LOAD BALANCER**********************************************
+
+Elastic Load Balancing:
+- Automatically distributes traffic across multiple targets
+- Provides high availability
+- Incorporates security
+- Perform Health checks
+
+Types:
+- Application Load Balancer HTTP and HTTPS:
+- Network Load Balancer TCP and UDP
+- Gateway Load Balancer IP
+
+Load Balancer Components:
+             Load Balancer
+Listener 1                     Listener 2
+Target 1 Target 2          Target 1 Target 2 Target 3
+Target Group 1             Target Group 2
+         
+Amazon EC2 Auto Scaling:
+- Helps you control EC2 instances available to handle the load for your application.
+- Launches or terminates your AWS resources based on specified conditions.
+- Registers new instances with load  balancers, when specified.
+
