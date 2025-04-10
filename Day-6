@@ -1,0 +1,48 @@
+************************************Shell Scripting****************************
+Instance terminal
+
+*Terminal
+
+nano demo.sh
+copy below
+"
+#!/bin/bash
+mkdir new
+cd new
+touch trial
+echo "Hello">trial
+"
+
+*Terminal:
+
+bash demo.sh
+ls
+cd
+etc...
+
+********************Jenkins****************************
+Job2:
+Add new item
+Name, create free style
+Description
+Source code management
+Select git
+Repo URL Paste
+Triggers: build periodically
+type "* * * * *"
+Build steps:
+Invoke top-level maven targets
+Select the maven created
+Save and apply
+Build now
+*******************************************************
+Job3:
+
+Create instace tomcat-name
+Slecet ubuntu
+
+**********************************Install JAVA*****************
+sudo apt-get update
+sudo apt install openjdk-17-jdk
+sudo apt-get install default-jre
+sudo apt install fontconfig openjdk-17-jre
