@@ -1,0 +1,159 @@
+******************************Docker**************************************8
+
+Git Bash:
+mkdir microservices-app
+cd
+ls -ll
+ls -l
+mkdir order_service
+mkdir user_service
+touch filenames
+
+cat > file : to write
+cat file : to display
+nano file: open
+ctrl+X and Y and enter: to save
+
+Try again: Container Building Docker
+
+*****************************Kubernetes Architecture****************************
+
+-Orchestration Platform: System or tool that automates the deployment, scaling, management and operation of containerized applications.
+-To manage containers
+-is an orchestration platform for containers
+-Developed by Google
+-Kubernetes will  use Docker internally, using K8S we will manage our Docker containers.
+
+Docker Swarm vs K8S:
+-Docker Swarm doesn't have auto scaling(scaling is manual process)
+-K8S supports auto scaling
+-For Production deployments K8S is highly recommended
+-Kubernetes is replacement for Docker Swarm
+
+Autoscaling: Increasing and Decreasing containers count based on incoming requests for our app.
+
+Cluster:
+-Group of Servers
+-Master Node(s)
+-Worker Node(s)
+-DevOps Engineer/Developer will give the task to K8S Master Node
+-Master Node will manage worker nodes
+-Master Node will schedule tasks to worker nodes
+-Our containers will be created in worker nodes
+-using cluster we can achieve high availability
+
+*****************************Kubernetes Architecture**********************************8
+
+-Control Plane/Master Node/Manager Node: Responsible to handle K8S related work
+	-API server: to handle incoming request of Control Plane, when we want to deploy the application in Kubernetes cluster we will send a request to control plane.
+	-Scheduler: responsible to schedule pending task available  in ETCd, it will decide in which worker node our task should execute, will deiced that by commutation with kubelet. 
+	-Control Manager: After scheduling completed , controller manager will manage our task execution in worker node
+	-ETCD: Internal database of cluster
+
+-Worker Node(s): Responsible to execute our application as PODS
+	-Pods: Smallest building block that we will create in K8S to run our containers.
+	-Containers: it is run time instance of our application.
+	-Docker engine: To run our container Docker Engine is required, Container will be created in worker nodes
+	-kubelet: worker node agent, maintain al the info related to worker node
+	-kube proxy: Provide network K8S cluster communication(MN->WN)
+	-docker runtime
+
+*******************************************Kubernetes Cluster Setup**********************************
+
+1. Self Managed Cluster(We will create our own cluster)
+a. Mini Kube (Single Node Cluster)
+b. Kubeadm(Multi Node Cluster)
+
+2. Provider Managed Cluster (Cloud Provider will give ready made Cluster)--->Charges applies
+a. AWS EKS
+b. Azure AKS
+c. GCP GKE
+
+**************************************Cluster creation AWS*******************************************
+
+EKS:
+-Create Cluster
+-Name
+-Create recommended role
+-Select AWS service
+-Select EKS(use case)
+-EKS auto cluster
+-Next
+-Create role
+-Automates to cluster creation
+-there in Cluster role select the one you created: AmazonAwsAutoCluster-hemashree
+-there in Node role give create role, select eks node role, next and create
+-select the created Node role you created and create cluster
+
+Creating master node:
+-EC2
+-Launch instance
+-Name masternode-hema
+-Proceed without key pair
+-Network setting:
+	-allow SSH
+	-select existing
+	-select default
+-Advanced setting:
+	-select the cluster
+-Launch instance
+(Failed:
+-)
+
+Once you connect everything
+-kubectl --version
+-curl link
+-ls
+-kubectl get nodes
+-aws configure
+-(aws->security credentials->Create access key->download csv->copy access and security key)
+-Enter access->security->none->
+
+***************************Note*************************
+
+1.install kubectl using below commnad:
+curl -O https://s3.us-west-2.amazonaws.com/amazon-eks/1.24.11/2023-03-17/bin/linux/amd64/kubectl
+chmod +x ./kubectl
+sudo cp ./kubectl /usr/local/bin
+export PATH=/usr/local/bin:$PATH
+	
+2.kubectl version
+
+3.install AWScli:
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+unzip awscliv2.zip
+sudo ./aws/install
+
+4.install the git:
+sudo yum install git -y
+
+5.git clone https://github.com/N4si/K8s-voting-app.git	
+
+Step4:adds-on EBSCSIDriver under EKScluster
+
+Step:5
+Creating node groups(node1 and node2) under EKScluster(masternode)
+IAM role under nodegroup is:
+use case-ec2
+	*AmazonEC2ContainerRegistryReadOnly
+	*AmazonEKS_CNI_Policy
+	*AmazonEKSWorkerNodePolicy
+	*AmazonEBSCSIDriverPolicy
+		-Ex:EKSNoderole
+
+*kubectl get nods
+	you can see the error
+	
+*aws eks update-kubeconfig --name cluster-1 --region ap-south-1
+	
+
+*kubectl get nodes
+	you can see unauthorized
+	
+create Access key and do aws configure in server
+ then check "kubectl get nodes"
+
+**************************End******************************
+
+
+
